@@ -1,0 +1,19 @@
+.js-valid {
+  color: $color-btns;
+}
+
+.js-valid-input:focus {
+  outline-color: $color-btns;
+}
+
+.js-invalid {
+  color: $color-btns-delete;
+}
+
+.js-invalid-input:focus {
+  outline-color: $color-btns-delete;
+}
+
+.js-display-none {
+  display: none;
+}

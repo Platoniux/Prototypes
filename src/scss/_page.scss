@@ -1,0 +1,121 @@
+.page {
+  display: flex;
+  flex-direction: column;
+
+  &__headline {
+    margin: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: $headline-font-color;
+    font-size: $the-biggest-font;
+    font-weight: 900;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+  }
+
+  &__own-cabinet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__user-name {
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: $big-font;
+    font-weight: 900;
+    color: $color-bg-windows;
+  }
+
+  &__main-container {
+    display: flex;
+    padding: 0 20px;
+  }
+
+  &__news-btns-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px;
+  }
+
+  &__news {
+    padding: 0 20px;
+  }
+
+  &__news-btn {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border: 1px solid $secondary-font-color;
+    border-radius: $border-radius;
+    background-color: transparent;
+    color: $font-color;
+    font-weight: bold;
+    cursor: pointer;
+
+    &--delete {
+      border: 0;
+      background-color: $color-btns-delete;
+    }
+  }
+
+  &__news-container {
+    display: flex;
+    width: 75%;
+    background-color: $color-bg-windows;
+    border-radius: $border-radius;
+    padding: 30px;
+  }
+
+  &__news-headline {
+    text-transform: uppercase;
+    color: $headline-font-color;
+    font-weight: 900;
+    font-size: $middle-font;
+  }
+
+  &__news-description {
+    margin: 20px 0;
+    color: $font-color;
+    font-size: $small-font;
+  }
+
+  &__news-img-container {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  &__news-img-crosses {
+    width: 100%;
+    height: auto;
+  }
+
+  &__cabinet-btns-container {
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+    width: 25%;
+  }
+
+  &__cabinet-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 0;
+    border-radius: $border-radius;
+    color: $font-color;
+    font-weight: bold;
+
+    &--logout {
+      background-color: $color-btns-delete;
+    }
+
+    &--edit-prfl {
+      text-decoration: none;
+      text-align: center;
+      border: 2px solid $secondary-font-color;
+    }
+  }
+}

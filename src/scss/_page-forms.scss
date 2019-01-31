@@ -1,0 +1,116 @@
+.page-forms {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+  &__sign-in-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: $forms-margin-lft-rght;
+    padding: $forms-padding;
+    max-width: $forms-width;
+    width: 100%;
+    background-color: $color-bg-windows;
+    color: $font-color;
+    border-radius: $border-radius;
+  }
+
+  &__group {
+    border: 0;
+  }
+
+  &__legend {
+    font-size: $big-font;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: $headline-font-color;
+  }
+
+  &__sign-up-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: $forms-margin-lft-rght;
+    padding: $forms-padding;
+    max-width: $forms-width;
+    width: 100%;
+    background-color: $color-bg-windows;
+    color: $font-color;
+    border-radius: $border-radius;
+  }
+
+  &__input-bunch {
+    position: relative;
+    display: block;
+    margin: 15px 0;
+    font-size: $small-font;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &__field {
+    display: block;
+    margin-top: 5px;
+    padding: 0 10px;
+    width: 100%;
+    height: $input-height;
+    border-radius: $border-radius;
+    border: 0;
+
+    &:hover + .page-forms__field-requirements,
+    &:focus + .page-forms__field-requirements,
+    &:active + .page-forms__field-requirements {
+      max-height: 1000px;
+      transition: max-height 1s ease-in;
+    }
+  }
+
+  &__field-requirements {
+    position: absolute;
+    z-index: 10;
+    margin: 10px 0;
+    padding: 0 0 0 5px;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    list-style-type: none;
+    border-radius: $border-radius;
+    background-color: $font-color;
+    color: $color-bg-windows;
+    transition: max-height 1s ease-out;
+
+    & li {
+      margin: 5px 0;
+      font-size: $smaller-font;
+      font-style: italic;
+    }
+  }
+
+  &__btns-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+    border: 0;
+    color: $font-color;
+    cursor: pointer;
+    border-radius: $border-radius;
+
+    &--submit {
+      margin-right: $btns-margin-lft-rght;
+      background-color: $color-btns;
+    }
+
+    &--cancel {
+      margin-right: $btns-margin-lft-rght;
+      background-color: transparent;
+      border: 1px solid $secondary-font-color;
+    }
+  }
+}
