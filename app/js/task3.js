@@ -3,25 +3,18 @@
 
   let users = [];
   let currentUser = {};
-  const startWindow = [
-      document.querySelector('.js-page-forms')
-  ];
-  const adminWindow = [
-      document.querySelector('.js-own-cabinet'),
-      document.querySelector('.js-admin-btns')
-  ];
-  const visitorWindow = [
-      document.querySelector('.js-own-cabinet')
-  ];
+  const startWindow = document.querySelectorAll('.js-page-forms');
+  const adminWindow = document.querySelectorAll('.js-admin-window');
+  const visitorWindow = document.querySelectorAll('.js-visitor-window');
 
-  function User(name, password, role) {
+  function User(name, password) {
     this.name = name;
     this.password = password;
 
     this.makeNewId();
   }
   User.prototype.makeNewId = function() {
-    this.id = (Math.ceil(Math.PI * (Math.random() * 100)) * 1230);
+    this.id = '_' + Math.random().toString(36).substr(2, 9);;
   };
   User.prototype.viewNews = function() {
     console.log('news');
@@ -104,14 +97,14 @@
           startWindow.forEach(item => {
             item.classList.add('js-display-none');
           });
-          adminWindow.forEach(item => {
+          [].forEach.call(adminWindow, item => {
             item.classList.remove('js-display-none');
           });
         } else {
-          startWindow.forEach(item => {
+          [].forEach.call(startWindow, item => {
             item.classList.add('js-display-none');
           });
-          visitorWindow.forEach(item => {
+          [].forEach.call(visitorWindow, item => {
             item.classList.remove('js-display-none');
           });
         }
@@ -122,15 +115,15 @@
   function exitFromCabinet() {
     let role = currentUser.role;
     if (role === 'admin') {
-      adminWindow.forEach(item => {
+      [].forEach.call(adminWindow, item => {
         item.classList.add('js-display-none');
       });
     } else {
-      visitorWindow.forEach(item => {
+      [].forEach.call(visitorWindow, item=> {
         item.classList.add('js-display-none');
       });
     }
-    startWindow.forEach(item => {
+    [].forEach.call(startWindow, item => {
       item.classList.remove('js-display-none');
     });
     currentUser = {};
@@ -142,15 +135,15 @@
     if (existingUser) {
       existingUser = JSON.parse(existingUser);
       users.push(existingUser);
-      startWindow.forEach(item => {
+      [].forEach.call(startWindow, item => {
         item.classList.add('js-display-none');
       });
       if (existingUser.role === 'admin') {
-        adminWindow.forEach(item => {
+        [].forEach.call(adminWindow, item => {
           item.classList.remove('js-display-none');
         });
       } else {
-        visitorWindow.forEach(item => {
+        [].forEach.call(visitorWindow, item => {
           item.classList.remove('js-display-none');
         });
       }

@@ -121,7 +121,11 @@
     {
       isInvalid: function(input) {
         let passField = document.querySelector('.js-pass');
-        return input.value !== passField.value;
+        if (passField.value) {
+          return input.value !== passField.value;
+        }
+        return true;
+        // return input.value !== passField.value;
       },
       invalidityMessage: 'Must be match above password',
       element: document.querySelector('.js-confirm-pass-req li:nth-child(2)')

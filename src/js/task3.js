@@ -7,7 +7,7 @@
   const adminWindow = document.querySelectorAll('.js-admin-window');
   const visitorWindow = document.querySelectorAll('.js-visitor-window');
 
-  function User(name, password, role) {
+  function User(name, password) {
     this.name = name;
     this.password = password;
 
