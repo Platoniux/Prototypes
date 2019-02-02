@@ -63,12 +63,14 @@
     &:focus + .page-forms__field-requirements,
     &:active + .page-forms__field-requirements {
       max-height: 1000px;
-      transition: max-height 1s ease-in;
+      transition: max-height 0.3s ease-in;
     }
   }
 
   &__field-requirements {
     position: absolute;
+    left: -100%;
+    top: 15px;
     z-index: 10;
     margin: 10px 0;
     padding: 0 0 0 5px;
@@ -79,7 +81,7 @@
     border-radius: $border-radius;
     background-color: $font-color;
     color: $color-bg-windows;
-    transition: max-height 1s ease-out;
+    transition: max-height 0.3s ease-out;
 
     & li {
       margin: 5px 0;

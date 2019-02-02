@@ -233,11 +233,13 @@ button:-moz-focusring {
 .page-forms__field:focus + .page-forms__field-requirements,
 .page-forms__field:active + .page-forms__field-requirements {
   max-height: 1000px;
-  transition: max-height 1s ease-in;
+  transition: max-height 0.3s ease-in;
 }
 
 .page-forms__field-requirements {
   position: absolute;
+  left: -100%;
+  top: 15px;
   z-index: 10;
   margin: 10px 0;
   padding: 0 0 0 5px;
@@ -248,7 +250,7 @@ button:-moz-focusring {
   border-radius: 10px;
   background-color: white;
   color: #222629;
-  transition: max-height 1s ease-out;
+  transition: max-height 0.3s ease-out;
 }
 
 .page-forms__field-requirements li {

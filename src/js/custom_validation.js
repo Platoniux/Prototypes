@@ -462,5 +462,9 @@
         }
       });
     }
+
+    function getInfoAboutUser(infoObj) {
+      console.dir(infoObj);
+    }
   }
 }());

@@ -12,10 +12,10 @@
     <h1 class="page__headline">
       reading club
     </h1>
-    <div class="page-forms">
+    <div class="page-forms js-page-forms">
       <form id="sign-in" 
             name="sign-in" 
-            class="page-forms__sign-in-form" 
+            class="page-forms__sign-in-form js-sign-in-form"
             autocomplete="off" 
             action="#" 
             method="POST">
@@ -27,8 +27,8 @@
             Login:
             <input type="text"
                    id="sign-in-login"
-                   name="sign-in-login"
-                   class="page-forms__field" 
+                   name="login"
+                   class="page-forms__field js-sign-in-login"
                    autocomplete="username"
                    autocorrect="off"
                    autocapitalize="off"
@@ -37,10 +37,10 @@
           </label>
           <label for="sign-in-password" class="page-forms__input-bunch">
             Password:
-            <input type="text"
+            <input type="password"
                    id="sign-in-password"
-                   name="sign-in-password"
-                   class="page-forms__field"
+                   name="password"
+                   class="page-forms__field js-sign-in-pass"
                    autocomplete="current-password"
                    autocorrect="off"
                    autocapitalize="off"
@@ -79,7 +79,7 @@
             New username:
             <input type="text"
                    id="sign-up-login"
-                   name="sign-up-login"
+                   name="login"
                    class="page-forms__field js-inputs js-customer-name"
                    autocomplete="username"
                    autocorrect="off"
@@ -96,7 +96,7 @@
             Password:
             <input type="password"
                    id="sign-up-password"
-                   name="sign-up-password"
+                   name="password"
                    class="page-forms__field js-inputs js-pass"
                    autocomplete="new-password"
                    autocorrect="off"
@@ -130,7 +130,7 @@
             <input type="checkbox"
                    id="check-admin"
                    name="check-admin"
-                   class="page-forms__check-admin">
+                   class="page-forms__check-admin js-admin">
             Administrator
           </label>
         </fieldset>
@@ -143,7 +143,6 @@
             sign up
           </button>
           <button type="reset"
-                  form="sign-up"
                   name="cancel"
                   value="cancel"
                   class="page-forms__btn page-forms__btn--cancel js-buttons">
@@ -152,13 +151,13 @@
         </div>
       </form>
     </div>
-    <div class="page__own-cabinet">
+    <div class="page__own-cabinet js-own-cabinet js-display-none">
       <h2 class="page__user-name">
         user name
       </h2>
       <div class="page__main-container">
         <div class="page__news-container">
-          <div class="page__news-btns-container">
+          <div class="page__news-btns-container js-admin-btns js-display-none">
             <button type="button"
                     value="Edit news"
                     name="Edit news"
@@ -188,7 +187,7 @@
           <button type="button"
                   value="Log out"
                   name="Log out"
-                  class="page__cabinet-btn page__cabinet-btn--logout">
+                  class="page__cabinet-btn page__cabinet-btn--logout js-logout">
             log out
           </button>
           <a href="#" class="page__cabinet-btn page__cabinet-btn--edit-prfl">
