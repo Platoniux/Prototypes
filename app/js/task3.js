@@ -51,8 +51,12 @@
   const signUpForm = document.querySelector('.js-sign-up-form');
   const signInForm = document.querySelector('.js-sign-in-form');
   const logOut = document.querySelector('.js-logout');
+  const userName = document.querySelector('.js-user-name');
 
-  document.addEventListener('DOMContentLoaded', loadPageForUser);
+  document.addEventListener('DOMContentLoaded', function() {
+    loadPageForUser();
+    showUserName(currentUser);
+  });
 
   signUpForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -65,6 +69,7 @@
   });
 
   logOut.addEventListener('click', exitFromCabinet);
+
 
   function makeNewUser(event, firstObj, secondObj) {
     let newUser = {};
@@ -80,7 +85,6 @@
     }
     users.push(newUser);
     logInForUser(eventForLogin, users);
-
   }
 
   function logInForUser(event, arrOfUsers) {
@@ -91,6 +95,7 @@
     arrOfUsers.forEach(item => {
       if (item.name === name && item.password === pass) {
         currentUser = item;
+        showUserName(currentUser);
         currentUserForLocalStorage = JSON.stringify(currentUser);
         localStorage.setItem('currentUser', currentUserForLocalStorage);
         if (currentUser.role === 'admin') {
@@ -133,7 +138,9 @@
   function loadPageForUser() {
     let existingUser = localStorage.getItem('currentUser');
     if (existingUser) {
-      existingUser = JSON.parse(existingUser);
+      existingUser = currentUser = JSON.parse(existingUser);
+      console.log(currentUser);
+      console.log(existingUser);
       users.push(existingUser);
       [].forEach.call(startWindow, item => {
         item.classList.add('js-display-none');
@@ -148,5 +155,10 @@
         });
       }
     }
+  }
+
+  function showUserName(obj) {
+    let name = obj.name.toUpperCase();
+    userName.innerHTML = name;
   }
 }());
