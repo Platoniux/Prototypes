@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Prototypes</title>
+</head>
+<body>
+  <div class="page">
+    <h1 class="page__headline">
+      reading club
+    </h1>
+    <div class="page-forms js-page-forms">
+      <form id="sign-in" 
+            name="sign-in" 
+            class="page-forms__sign-in-form js-sign-in-form"
+            autocomplete="off" 
+            action="#" 
+            method="POST">
+        <fieldset class="page-forms__group">
+          <legend class="page-forms__legend">
+            sign in
+          </legend>
+          <label for="sign-in-login" class="page-forms__input-bunch">
+            Login:
+            <input type="text"
+                   id="sign-in-login"
+                   name="login"
+                   class="page-forms__field js-sign-in-login"
+                   autocomplete="username"
+                   autocorrect="off"
+                   autocapitalize="off"
+                   required
+                   placeholder="Username">
+          </label>
+          <label for="sign-in-password" class="page-forms__input-bunch">
+            Password:
+            <input type="password"
+                   id="sign-in-password"
+                   name="password"
+                   class="page-forms__field js-sign-in-pass"
+                   autocomplete="current-password"
+                   autocorrect="off"
+                   autocapitalize="off"
+                   required
+                   placeholder="Your password">
+          </label>
+        </fieldset>
+        <div class="page-forms__btns-container">
+          <button type="submit"
+                  form="sign-in" 
+                  name="Sign in"
+                  value="Sign in"
+                  class="page-forms__btn page-forms__btn--submit">
+            sign in
+          </button>
+          <button type="reset"
+                  form="sign-in"
+                  name="cancel"
+                  value="cancel"
+                  class="page-forms__btn page-forms__btn--cancel">
+            cancel
+          </button>
+        </div>
+      </form>
+      <form action="POST"
+            id="sign-up"
+            name="sign-up"
+            class="page-forms__sign-up-form js-form js-sign-up-form"
+            autocomplete="off"
+            action="#">
+        <fieldset class="page-forms__group">
+          <legend class="page-forms__legend">
+            sign up
+          </legend>
+          <label for="sign-up-login" class="page-forms__input-bunch">
+            New username:
+            <input type="text"
+                   id="sign-up-login"
+                   name="login"
+                   class="page-forms__field js-inputs js-customer-name"
+                   autocomplete="username"
+                   autocorrect="off"
+                   autocapitalize="off"
+                   required
+                   placeholder="New username">
+            <ul class="page-forms__field-requirements js-custom-name-req">
+              <li>This field is required</li>
+              <li>At least 3 characters long</li>
+              <li>Must only contain letters (no digits or special characters)</li>
+            </ul>
+          </label>
+          <label for="sign-up-password" class="page-forms__input-bunch">
+            Password:
+            <input type="password"
+                   id="sign-up-password"
+                   name="password"
+                   class="page-forms__field js-inputs js-pass"
+                   autocomplete="new-password"
+                   autocorrect="off"
+                   autocapitalize="off"
+                   required
+                   placeholder="New password">
+            <ul class="page-forms__field-requirements js-pass-req">
+              <li>This field is required</li>
+              <li>Must contain digits</li>
+              <li>Must contain capitalize letter</li>
+              <li>At least 8 characters long</li>
+            </ul>
+          </label>
+          <label for="sign-up-confirm-pass" class="page-forms__input-bunch">
+            Confirm password:
+            <input type="password"
+                   id="sign-up-confirm-pass"
+                   name="sign-up-confirm-pass"
+                   class="page-forms__field js-inputs js-confirm-pass"
+                   autocomplete="new-password"
+                   autocorrect="off"
+                   autocapitalize="off"
+                   required
+                   placeholder="Confirm password">
+            <ul class="page-forms__field-requirements js-confirm-pass-req">
+              <li>This field is required</li>
+              <li>Must be match above password</li>
+            </ul>
+          </label>
+          <label for="check-admin" class="page-forms__input-bunch">
+            <input type="checkbox"
+                   id="check-admin"
+                   name="check-admin"
+                   class="page-forms__check-admin js-admin">
+            Administrator
+          </label>
+        </fieldset>
+        <div class="page-forms__btns-container">
+          <button type="submit"
+                  form="sign-up"
+                  name="sign up"
+                  value="sign up"
+                  class="page-forms__btn page-forms__btn--submit js-buttons">
+            sign up
+          </button>
+          <button type="reset"
+                  name="cancel"
+                  value="cancel"
+                  class="page-forms__btn page-forms__btn--cancel js-buttons">
+            cancel
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="page__own-cabinet js-own-cabinet js-display-none">
+      <h2 class="page__user-name">
+        user name
+      </h2>
+      <div class="page__main-container">
+        <div class="page__news-container">
+          <div class="page__news-btns-container js-admin-btns js-display-none">
+            <button type="button"
+                    value="Edit news"
+                    name="Edit news"
+                    class="page__news-btn">
+              edit news
+            </button>
+            <button type="button"
+                    value="Delete news"
+                    name="Delete news"
+                    class="page__news-btn page__news-btn--delete">
+              delete news
+            </button>
+          </div>
+          <section class="page__news">
+            <h3 class="page__news-headline">
+              on the Internet, there was a heated argument about how to draw a cross correctly
+            </h3>
+            <p class="page__news-description">
+              How can you draw in any way except 5 and 6?!
+            </p>
+            <div class="page__news-img-container">
+              <img class="page__news-img-crosses" src="img/x.png" alt="ways to draw cross">
+            </div>
+          </section>
+        </div>
+        <div class="page__cabinet-btns-container">
+          <button type="button"
+                  value="Log out"
+                  name="Log out"
+                  class="page__cabinet-btn page__cabinet-btn--logout js-logout">
+            log out
+          </button>
+          <a href="#" class="page__cabinet-btn page__cabinet-btn--edit-prfl">
+            edit profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/task1.js"></script>
+  <script src="js/task2.js"></script>
+  <script src="js/custom_validation.js"></script>
+  <script src="js/task3.js"></script>
+</body>
+</html>
