@@ -55,7 +55,6 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     loadPageForUser();
-    showUserName(currentUser);
   });
 
   signUpForm.addEventListener('submit', function(e) {
@@ -91,10 +90,11 @@
     let logInForm = event.currentTarget;
     let currentUserForLocalStorage = {};
     let name = logInForm.elements.login.value;
-    let pass = logInForm.elements.password.value;
+    // let pass = logInForm.elements.password.value;
     arrOfUsers.forEach(item => {
-      if (item.name === name && item.password === pass) {
-        currentUser = item;
+      if (item.name === name) {
+        currentUser.name = item.name;
+        currentUser.role = item.role;
         showUserName(currentUser);
         currentUserForLocalStorage = JSON.stringify(currentUser);
         localStorage.setItem('currentUser', currentUserForLocalStorage);
@@ -139,9 +139,9 @@
     let existingUser = localStorage.getItem('currentUser');
     if (existingUser) {
       existingUser = currentUser = JSON.parse(existingUser);
-      console.log(currentUser);
-      console.log(existingUser);
+      showUserName(currentUser);
       users.push(existingUser);
+      console.log(users);
       [].forEach.call(startWindow, item => {
         item.classList.add('js-display-none');
       });
